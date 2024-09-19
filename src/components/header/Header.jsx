@@ -1,36 +1,26 @@
-import React from "react"
-import logo from "../../assets/images/logo.svg"
-import "./header.css"
-import { User } from "./User"
-import { nav } from "../../assets/data/data"
-import { Link } from "react-router-dom"
+import React from 'react';
+import './header.css';
 
-export const Header = () => {
-   window.addEventListener("scroll", function () {
-    const header = this.document.querySelector(".header")
-    header.classList.toggle("active", this.window.scrollY > 100)
-  }) 
+const Header = () => {
   return (
-    <>
-      <header className='header'>
-        <div className='scontainer flex'>
-          <div className='logo'>
-            <img src={logo} alt='logo' width='40px' />
-          </div>
-          <nav>
+    <header className="header">
+      <div className="header-content">
+        <div className="logo">Core&Outline</div>
+        <nav className="main-nav">
           <ul>
-              {nav.map((link) => (
-                <li key={link.id}>
-                  <Link to={link.url}>{link.text}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className='account flexCenter'>
-            <User />
-          </div>
-        </div>
-      </header>
-    </>
-  )
-}
+            <li><a href="/">All</a></li>
+            <li><a href="/product-updates">Product Updates</a></li>
+            <li><a href="/market-insights">Market Insights</a></li>
+            <li><a href="/gtm">GTM</a></li>
+            <li><a href="/retention">Retention</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/funding">Funding</a></li>
+            <li><a href="/how-we-build">How we Build</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

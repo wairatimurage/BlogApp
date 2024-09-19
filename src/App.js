@@ -1,25 +1,21 @@
 import React from "react";
-import { Footer } from "./components/footer/Footer";
-import { Header } from "./components/header/Header";
-import { Home } from "./pages/home/Home";
-import { Login } from "./pages/login/Login";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Account } from "./pages/account/Account";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/home/Home";
+import "./App.css";
 
-const App = () => {
+function App() {
   return (
-    <>
-      <Router>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-
-          <Route exact path="/account" component={Account} />
-        </Switch>
-        <Footer />
-      </Router>
-    </>
+    <Router>
+      <div className="App">
+        <div className="content-wrapper">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            {/* Add more routes as needed */}
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
-};
+}
+
 export default App;
